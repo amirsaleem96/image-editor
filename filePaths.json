@@ -1,3 +1,22 @@
 {
-  
+
+  "editor" : {
+    "styles" : {
+      "debug" : [
+        "static/css/editor.css"
+      ],
+      "prod" : [
+        "static/build/css/editor.min.css"
+      ]
+    },
+    "scripts" : {
+      "debug" : [
+        "static/js/editor.js"
+      ],
+      "prod" : [
+        "static/build/js/editor.min.js"
+      ]
+    }
+  }
+
 }

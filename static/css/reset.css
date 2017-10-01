@@ -1,7 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html,
 body,
@@ -15,11 +14,9 @@ h5,
 h6,
 p {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 body {
   width: 100%;
   font-weight: 400;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }

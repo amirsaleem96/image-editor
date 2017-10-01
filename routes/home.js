@@ -14,4 +14,12 @@ module.exports = function(settings) {
 		baseUrl = config.baseUrl_local;
 	}
 
+	app.get('/editor/image-editor', function(req, res){
+    res.render(
+			styles : assetsMapper["editor"]["styles"][mode],
+			scripts : assetsMapper["editor"]["scripts"][mode],
+			baseUrl : baseUrl
+		)
+	});
+
 };
