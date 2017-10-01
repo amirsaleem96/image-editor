@@ -6,20 +6,18 @@ var notify = require("gulp-notify");
 var moment = require("moment");
 var uglifycss = require("gulp-uglifycss");
 var concat = require('gulp-concat');
-var staticMapper = require("./staticMapper.json");
+var filePaths = require("./filePaths.json");
 var uglify = require('gulp-uglify');
 var gulpDebug = require('gulp-debug');
 
-// method to convert json array of object to javascript array of object
 function getAssetsArray(location){
 	var assets = [];
+	console.log(location)
 	location.forEach(function(anAsset){
 		assets.push(anAsset);
 	});
 	return assets;
 }
-
-// task to clean the build directory
 
 gulp.task('clean', function(){
 	gutil.log('Cleaning build directory');
@@ -31,28 +29,28 @@ gulp.task('clean', function(){
 
 gulp.task('build-css', function(){
 	gutil.log('building minified css');
-	for(var key in staticMapper){
+	for(var key in filePaths){
 		gulp.src(
-			getAssetsArray(staticMapper[key].styles.debug)
-		);
-		.pipe(concat(staticMapper[key].styles.prod[0]))
+			getAssetsArray(filePaths[key]["styles"]["debug"])
+		)
+		.pipe(concat(filePaths[key]["styles"]["prod"][0]))
 		.on('error', notify.onError("Error: <%= error.message %>"))
 		.pipe(uglifycss())
 		.on('error', notify.onError("Error: <%= error.message %>"))
 		.pipe(gulp.dest('.'))
-	    .pipe(notify('Concatenated stylesheets for ' + staticMapper[key]styles.prod[0] + ' (' + moment().format('MMM Do h:mm:ss A') + ')'))
+	    .pipe(notify('Concatenated stylesheets for ' + filePaths[key]["styles"]["prod"][0] + ' (' + moment().format('MMM Do h:mm:ss A') + ')'))
 	}
 
 });
 
 gulp.task('build-js', function(){
 	gutil.log('building minified js')
-	for(var key in staticMapper){
-		gulp.src(getAssetsArray(staticMapper[key]["scripts"]["debug"])
+	for(var key in filePaths){
+		gulp.src(getAssetsArray(filePaths[key]["scripts"]["debug"])
 	)
 		.pipe(gulpDebug())
         .on('error', notify.onError("Error: <%= error.message %>"))
-        .pipe(concat(staticMapper[key]["scripts"]["prod"][0]))
+        .pipe(concat(filePaths[key]["scripts"]["prod"][0]))
         .on('error', notify.onError("Error: <%= error.message %>"))
         .pipe(uglify())
         .on('error', function(err) {
@@ -61,7 +59,7 @@ gutil.log(gutil.colors.red('[Error]'), err.toString());
 this.emit('end');
 })
         .pipe(gulp.dest('.'))
-        .pipe(notify('Uglified JavaScript (' +staticMapper[key]["scripts"]["prod"][0]+ moment().format('MMM Do h:mm:ss A') + ')'))
+        .pipe(notify('Uglified JavaScript (' +filePaths[key]["scripts"]["prod"][0]+ moment().format('MMM Do h:mm:ss A') + ')'))
 	}
 })
 
