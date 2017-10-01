@@ -1,0 +1,29 @@
+{
+  "name": "image-editor",
+  "version": "1.0.0",
+  "description": "web based image editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js --port=8080 --config=./configuration.json --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirsaleem96/image-editor.git"
+  },
+  "keywords": [
+    "image",
+    "editor",
+    "online",
+    "web",
+    "integration",
+    "easy",
+    "to",
+    "use"
+  ],
+  "author": "Amir Saleem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amirsaleem96/image-editor/issues"
+  },
+  "homepage": "https://github.com/amirsaleem96/image-editor#readme"
+}
