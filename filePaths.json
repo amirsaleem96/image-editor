@@ -11,6 +11,10 @@
     },
     "scripts" : {
       "debug" : [
+        "static/js/vendor/jquery-3.2.1.min.js",
+        "static/js/vendor/easeljs.min.js",
+        "static/js/common-functions.js",
+        "static/js/request.js",
         "static/js/editor.js"
       ],
       "prod" : [

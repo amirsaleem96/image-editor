@@ -57,8 +57,7 @@ app.use(compression()); //compressing payload on every request
 app.engine('html', require('hogan-express'));
 app.set('partials',{
   header: 'header',
-  footer: 'footer',
-  primaryHeader : 'primary_header'
+  footer: 'footer'
 });
 
 app.set('view engine', 'html');
@@ -78,7 +77,7 @@ function cprint(text, level){
     mode: mode,
     env: env,
     cprint: cprint
-  }
+  };
 
 require(__dirname+"/routes/home.js")(settings);
 

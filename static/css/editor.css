@@ -20,3 +20,11 @@ body {
   width: 100%;
   font-weight: 400;
   font-family: sans-serif; }
+
+body {
+  background-color: #F4F4F4;
+  background-image: url("../img/grid-me.png"); }
+
+.canvas-wrapper {
+  position: relative;
+  border: 1px solid black; }
