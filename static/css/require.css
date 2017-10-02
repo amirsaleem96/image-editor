@@ -20,3 +20,22 @@ body {
   width: 100%;
   font-weight: 400;
   font-family: sans-serif; }
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.ie-header {
+  width: 100%;
+  background: #0D0D0D;
+  padding: 10px 20px; }
+  .ie-header a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    background: cornflowerblue;
+    float: right;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    border-radius: 4px; }

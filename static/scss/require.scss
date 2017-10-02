@@ -2,3 +2,19 @@
 @import 'colors';
 @import 'reusable';
 @import 'ui-elements';
+
+.ie-header {
+  width: 100%;
+  background: $theme-black;
+  padding: 10px 20px;
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    background: $theme-blue;
+    float: right;
+    padding: 5px 10px;
+    color: $light-text;
+    border-radius: 4px;
+  }
+}

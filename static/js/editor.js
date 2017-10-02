@@ -85,7 +85,7 @@ var downloadCanvas =  function(){
 
 
 $(document).ready(function(){
- getImageData();
+ //getImageData();
  $("#download").on("click", function(){
    downloadCanvas();
  });
